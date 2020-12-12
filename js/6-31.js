@@ -6,7 +6,12 @@ const players = [
 ];
 // Пиши код ниже этой строки
 
-const totalAveragePlaytimePerGame = players;
+const totalAveragePlaytimePerGame = players.reduce(
+  (acc, { playtime, gamesPlayed }) => acc + playtime / gamesPlayed,
+  0,
+);
+
+console.log(totalAveragePlaytimePerGame);
 
 // Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён.
 // Рассчитать время для каждого из игроков, можно разделив его время(свойство playtime) на количество игр(свойство gamesPlayed).
